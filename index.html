@@ -339,8 +339,10 @@ function setzeText(id, wert){
   if(el && typeof wert === 'string') el.textContent = wert;
 }
 
-document.getElementById('arbeitsstand').textContent =
-  'Arbeitsstand ' + new Date().toLocaleDateString('de-DE',{day:'2-digit',month:'2-digit',year:'numeric'});
+document.getElementById('arbeitsstand').textContent = 'Arbeitsstand ' +
+  (typeof STAND === 'string' && STAND
+    ? STAND
+    : new Date().toLocaleDateString('de-DE',{day:'2-digit',month:'2-digit',year:'numeric'}));
 setzeText('abschluss',  typeof ABSCHLUSSHINWEIS !== 'undefined' ? ABSCHLUSSHINWEIS : '');
 setzeText('disclaimer', typeof DISCLAIMER       !== 'undefined' ? DISCLAIMER       : '');
 

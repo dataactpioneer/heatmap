@@ -85,6 +85,9 @@ const KRITERIEN = [
 ];
 
 /* Erläuterung der Skala. kurz steht unter der Matrix, der Rest im Detailfeld. */
+/* Stand der inhaltlichen Bearbeitung. Bei jeder Überarbeitung anpassen. */
+const STAND = "25.11.2026";
+
 const SKALA = {
   kurz: "Jede Zelle ist mit einem Wert von 1 bis 5 eingeschätzt, je höher der Wert, desto kräftiger die Farbe. Ein hoher Wert heißt nicht automatisch „gefährlich“, sondern immer nur „viel von dem, was in der Spalte steht“.",
   lang: [

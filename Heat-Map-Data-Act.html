@@ -415,6 +415,9 @@ const KRITERIEN = [
 ];
 
 /* Erläuterung der Skala. kurz steht unter der Matrix, der Rest im Detailfeld. */
+/* Stand der inhaltlichen Bearbeitung. Bei jeder Überarbeitung anpassen. */
+const STAND = "25.11.2026";
+
 const SKALA = {
   kurz: "Jede Zelle ist mit einem Wert von 1 bis 5 eingeschätzt, je höher der Wert, desto kräftiger die Farbe. Ein hoher Wert heißt nicht automatisch „gefährlich“, sondern immer nur „viel von dem, was in der Spalte steht“.",
   lang: [
@@ -1620,8 +1623,10 @@ function setzeText(id, wert){
   if(el && typeof wert === 'string') el.textContent = wert;
 }
 
-document.getElementById('arbeitsstand').textContent =
-  'Arbeitsstand ' + new Date().toLocaleDateString('de-DE',{day:'2-digit',month:'2-digit',year:'numeric'});
+document.getElementById('arbeitsstand').textContent = 'Arbeitsstand ' +
+  (typeof STAND === 'string' && STAND
+    ? STAND
+    : new Date().toLocaleDateString('de-DE',{day:'2-digit',month:'2-digit',year:'numeric'}));
 setzeText('abschluss',  typeof ABSCHLUSSHINWEIS !== 'undefined' ? ABSCHLUSSHINWEIS : '');
 setzeText('disclaimer', typeof DISCLAIMER       !== 'undefined' ? DISCLAIMER       : '');
 
